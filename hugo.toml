@@ -1,0 +1,4 @@
+baseURL = 'https://colby.gg'
+languageCode = 'en-us'
+title = 'Colby'
+theme = 'ananke'
