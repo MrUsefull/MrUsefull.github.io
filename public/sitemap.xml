@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://colby.gg/</loc>
+    <lastmod>2023-09-27T12:14:45-07:00</lastmod>
+  </url><url>
+    <loc>https://colby.gg/posts/2023-09-27-initial/</loc>
+    <lastmod>2023-09-27T12:14:45-07:00</lastmod>
+  </url><url>
+    <loc>https://colby.gg/posts/</loc>
+    <lastmod>2023-09-27T12:14:45-07:00</lastmod>
+  </url><url>
+    <loc>https://colby.gg/categories/</loc>
+  </url><url>
+    <loc>https://colby.gg/tags/</loc>
+  </url>
+</urlset>
