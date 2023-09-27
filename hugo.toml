@@ -1,4 +1,14 @@
 baseURL = 'https://colby.gg'
 languageCode = 'en-us'
 title = 'Colby'
-theme = 'ananke'
+theme = 'github.com/theNewDynamic/gohugo-theme-ananke'
+
+[params]
+    author = "Jon Colby"
+    featured_image = "/images/banner.png"
+[[params.ananke_socials]]
+    name = "github"
+    url = "https://github.com/MrUsefull"
+[[params.ananke_socials]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/jonathan-colby-a9198b99/"
