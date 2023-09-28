@@ -1,6 +1,6 @@
 baseURL = 'https://colby.gg'
 languageCode = 'en-us'
-title = 'Colby'
+title = 'colby.gg'
 theme = 'github.com/theNewDynamic/gohugo-theme-ananke'
 
 [params]
