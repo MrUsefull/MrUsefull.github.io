@@ -217,6 +217,17 @@ This [dashboard](https://grafana.com/grafana/dashboards/13516-synology-snmp-dash
 
 As you can see, there were immediate action items when I first brought up the dashboard. My NAS had been running rather warm, and the fans were set to quiet mode. Thanks to the monitoring, that was an easy fix before it became an issue.
 
+An improved dashboard that requires some modification is [here](https://grafana.com/grafana/dashboards/13516-synology-snmp-dashboard/). Several changes are required:
+
+1. Alter the job query param in every graph to match the job used (snmp in this article).
+2. Alter the interface variable in the dashboard. The default query does not work for me:
+
+[![interface query](/images/2023-10-17-monitoring-synology/improved-dash-interface.png)](/images/2023-10-17-monitoring-synology/improved-dash-interface.png)
+
+Final results:
+
+[![interface query](/images/2023-10-17-monitoring-synology/final-results.png)](/images/2023-10-17-monitoring-synology/final-results.png)
+
 ## Conclusion
 
-Prometheus is now configured to pull SNMP metrics from the NAS, dashboards and alerts are now configured. There are probably changes worth making to the generated snmp.yml config, and I'm leaving the alerting config as a rest of the owl situation.
+Prometheus is now configured to pull SNMP metrics from the NAS, dashboards and alerts are now configured. I'm leaving the alerting config as an exercise for the reader.
