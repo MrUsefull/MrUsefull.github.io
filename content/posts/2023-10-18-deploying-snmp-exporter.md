@@ -1,7 +1,7 @@
 +++
 title = 'Deploying snmp_exporter via Ansible'
 date = 2023-10-18
-draft = true
+draft = false
 +++
 
 A [previous](https://colby.gg/posts/2023-10-17-monitoring-synology/) post described how to monitor a Synology NAS with SNMP and prometheus. This post goes over the Ansible role created to deploy the snmp_exporter. I'm rather dissatisfied with the way I'm doing testing with molecule at the moment, so I'm not releasing the full role in a repo at this time. However the important files are layed out.
