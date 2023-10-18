@@ -170,7 +170,7 @@ The snmp_exporter config must be generated, default configuration will not work.
 
 ## Install snmp_exporter and snmp.yml
 
-Choose the host you want to have polling your NAS for metrics and install the snmp_exporter and the generated snmb.yml file. There are instructions for this in the snmp_exporter git repo.
+Choose the host you want to have polling your NAS for metrics and install the snmp_exporter and the generated snmp.yml file. There are instructions for this in the snmp_exporter git repo.
 
 I've written [another post](https://colby.gg/posts/2023-10-18-deploying-snmp-exporter/) on how I deploy snmp_exporter with Ansible.
 
