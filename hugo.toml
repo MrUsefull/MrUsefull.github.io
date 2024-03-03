@@ -12,3 +12,14 @@ theme = 'github.com/theNewDynamic/gohugo-theme-ananke'
 [[params.ananke_socials]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/jonathan-colby-a9198b99/"
+
+[related]
+  threshold = 20
+  includeNewer = true
+  [related.indices]
+    applyFilter = true
+    name = "tags"
+    weight = 100
+
+[taxonomies]
+  tag = "tags"

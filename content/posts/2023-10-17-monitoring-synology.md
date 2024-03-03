@@ -4,6 +4,7 @@ date = 2023-10-17
 featured_image="/images/2023-10-17-monitoring-synology/grafana-dashboard.png"
 draft = false
 toc = true
+tags = ["metrics", "k3s", "prometheus", "grafana", "synology", "snmp"]
 +++
 
 My Synology NAS is a very important part of my [home network](https://colby.gg/posts/2023-09-29-network-overview/), and until recently it was practically unmonitored. Synology doesn't make it easy to monitor their NAS devices out of the box. It's possible to get Prometheus' node exporter running, but that doesn't export all of the metrics of interest and is generally a pain to deal with. I also prefer to minimize the number of things running on my NAS. It's under enough load as is.
