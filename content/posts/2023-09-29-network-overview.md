@@ -1,6 +1,6 @@
 +++
 title = 'Documenting my current home network'
-date = 2023-09-29T20:54:13-07:00
+date = 2023-09-29
 featured_image="/images/2023-09-29-network-overview/HomeLab.png"
 draft = false
 toc = true
