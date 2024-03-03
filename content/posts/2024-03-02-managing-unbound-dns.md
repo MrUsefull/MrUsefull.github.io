@@ -3,6 +3,7 @@ title = 'Managing Unbound DNS overrides with Boundation'
 date = 2024-03-02
 summary = "CRUD OPNsense Unbound DNS with CLI or External DNS"
 featured_image="/images/2024-03-02-managing-unbound-dns/pipeline.png"
+toc = true
 +++
 
 ## [Boundation](https://github.com/MrUsefull/boundation) GitHub repository
