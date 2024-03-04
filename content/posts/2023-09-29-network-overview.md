@@ -4,7 +4,7 @@ date = 2023-09-29
 featured_image="/images/2023-09-29-network-overview/HomeLab.png"
 draft = false
 toc = true
-tags = ["homenetwork", "network", "diagram"]
+tags = ["home network", "network", "diagram"]
 +++
 
 My home network setup currently allows me to host multiple useful services in a K3S cluster, as well as access my security footage or any other service remotely over Wireguard. All host level resources are deployed with [Ansible](https://www.ansible.com/community) for automation. No manual changes allowed.
