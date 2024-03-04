@@ -3,12 +3,12 @@ title = 'Multiwan Failover With OPNsense and an LTE modem'
 date = 2024-03-04
 tags = ["network", "failover", "opnsense", "home network", "HA", "multiwan"]
 toc = true
-draft = true
+draft = false
 +++
 
 ## The Problem
 
-Working remotely means my internet connection must be highly reliable. Losing internet during working hours means potentially losing income. Worse, I could be forced to an office. With an open floorplan. A fate truely worse looking for a new job.
+Working remotely means my internet connection must be highly reliable. Losing internet during working hours means potentially losing income. Worse, I could be forced into an office. With an open floorplan. A fate truely worse than looking for a new job.
 
 Murphy's law also implies any connection downtime will happen when the connection is needed most. This post is all about mitigating the risk of an ISP outage with a secondary connection over a separate medium. In my case it's my main ISP's connection and a 4G LTE modem backup.
 
@@ -18,13 +18,15 @@ Relevant OPNsense [documentation](https://docs.opnsense.org/manual/how-tos/multi
 
 ## Hardware
 
-This project needs a couple peices of hardware to get going.
+This project needs a couple pieces of hardware to get going.
 
 1. A router running OPNsense with at least 3 ethernet ports, or 2 ethernet ports and a USB port, or 2 ethernet and a free PCIe slot. All depending on your LTE modem and router combo.
 
 2. An LTE modem. I went with [Protectli](https://protectli.com/lte/), but really any LTE modem should work just fine here.
 
 ## Setup The Modem
+
+> WARNING: Do not disable DHCP on the modem. Your router will not get an IP address when the modem has DHCP disabled in modem mode.
 
 1. Attach the antenna, insert the sim card, and power on the modem.
 
@@ -34,7 +36,10 @@ This project needs a couple peices of hardware to get going.
 
 4. Change the login info. At minimum change the password.
 
-5. Set the modem to bridge or modem mode.
+5. Set the modem to modem mode `Setup -> Network -> Device Mode`.
+
+    [![modem config](/images/2024-03-04-multiwan-failover/modem-config.png)](/images/2024-03-04-multiwan-failover/modem-config.png)
+
 
 You can disconnect the modem from your computer now.
 
@@ -48,7 +53,7 @@ You can disconnect the modem from your computer now.
 
     [![existing WAN monitor ip](/images/2024-03-04-multiwan-failover/existing-wan-monitor-ip.png)](/images/2024-03-04-multiwan-failover/existing-wan-monitor-ip.png)
 
-    Lower priority is more likely to be used. A blank monitor IP defaults to using the next hop. Some next hops respond to ping, some do not.
+    A lower priority number means the gateway is more important. Your preferred gateway should have the lowest priority number here. Valid values are between 1 and 255. The default for my system was 254. A blank monitor IP defaults to using the next hop. Some next hops respond to ping, some do not.
     I set my existing ISP connection to a priority of 128 (default was 254) and to use the next hop.
 
     > WARNING: Be careful what you use for the monitor IP. Once you use a monitor IP, that IP will only be reachable through the interface that has the monitor IP. This can lead to poor behavior when the Gateway goes down.
@@ -112,3 +117,11 @@ From _gateway (10.0.3.1) icmp_seq=53 Destination Host Unreachable
 ```
 
 The LTE connection is much slower than my primary ISP. It is just a backup afterall. This is the minimum setup for failover, more advanced to come in another post.
+
+## Configuring web gui access to LTE Modem
+
+You may want access to the modem's web gui after all of the config is in place. To do so you need to setup a route to the modem's management IP.
+
+In OPNsense `System -> Routes -> Configuration` add a /32 route to the management IP address. Mine is `192.168.123.254/32`
+
+[![routes](/images/2024-03-04-multiwan-failover/routes.png)](/images/2024-03-04-multiwan-failover/routes.png)
