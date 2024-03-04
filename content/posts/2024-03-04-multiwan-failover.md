@@ -1,6 +1,7 @@
 +++
 title = 'Multiwan Failover With OPNsense and an LTE modem'
 date = 2024-03-04
+featured_image="/images/2024-03-04-multiwan-failover/diagram.png"
 tags = ["network", "failover", "opnsense", "home network", "HA", "multiwan"]
 toc = true
 draft = false
@@ -15,6 +16,14 @@ Murphy's law also implies any connection downtime will happen when the connectio
 This post describes the bare minimum configuration. A more advanced setup may be in a followup post.
 
 Relevant OPNsense [documentation](https://docs.opnsense.org/manual/how-tos/multiwan.html).
+
+## Requirements
+
+[![diagram](/images/2024-03-04-multiwan-failover/diagram.png)](/images/2024-03-04-multiwan-failover/diagram.png)
+
+- Traffic should flow through the main ISP connection exclusively unless there is an outage.
+- If the main ISP has an outage, traffic should go through the backup connection.
+- When service from the main ISP is restored, traffic should go through the main ISP connection.
 
 ## Hardware
 
@@ -39,7 +48,6 @@ This project needs a couple pieces of hardware to get going.
 5. Set the modem to modem mode `Setup -> Network -> Device Mode`.
 
     [![modem config](/images/2024-03-04-multiwan-failover/modem-config.png)](/images/2024-03-04-multiwan-failover/modem-config.png)
-
 
 You can disconnect the modem from your computer now.
 
