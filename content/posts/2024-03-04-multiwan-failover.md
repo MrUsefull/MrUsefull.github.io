@@ -4,6 +4,8 @@ date = 2024-03-04
 featured_image="/images/2024-03-04-multiwan-failover/diagram.png"
 tags = ["network", "failover", "opnsense", "home network", "HA", "multiwan"]
 toc = true
+series = ["multiwan"]
+summary = "A simple multiwan failover setup incase of primary ISP outage."
 draft = false
 +++
 
