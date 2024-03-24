@@ -1,6 +1,6 @@
 +++
 title = 'Multiwan 2: Segementation and Gateway Groups'
-date = 2024-03-22T10:17:42-07:00
+date = 2024-03-22
 tags = ["network", "failover", "opnsense", "home network", "HA", "multiwan"]
 toc = true
 featured_image="/images/2024-03-22-multiwan-2/gateway_groups_complete.png"
