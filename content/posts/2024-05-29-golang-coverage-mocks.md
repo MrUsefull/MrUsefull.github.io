@@ -1,10 +1,10 @@
 +++
-title = 'Golang Coverage Mocks'
+title = 'Excluding Generated Mocks From Coverage'
 date = 2024-05-29
 toc = true
 tags = ["go", "golang", "coverage", "mocks", "build"]
 featured_image="/images/2024-05-29-golang-coverage-mocks/gopher.png"
-summary = "Excluding generated mocks from code coverage"
+summary = "Some projects make rather heavy use of gomock for testing, and I've noticed the command that I had been using to run all tests and generate coverage included the mocks in coverage and brought the numbers down."
 +++
 
 Some projects make rather heavy use of gomock for testing, and I've noticed the command that I had been using to run all tests and generate coverage included the mocks in coverage and brought the numbers down.
