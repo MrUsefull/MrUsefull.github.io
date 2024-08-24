@@ -14,8 +14,6 @@ This post is the first in a series about common Go footguns that I regularly see
 Consider this simple code sample ([go playground](https://go.dev/play/p/gbRgUIJR7mS))
 
 ```go
-// You can edit this code!
-// Click here and start typing.
 package main
 
 import "fmt"
