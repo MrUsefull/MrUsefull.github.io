@@ -1,6 +1,6 @@
 +++
 title = 'Common Go Footguns: Appending to slices'
-date = 2024-08-24
+date = 2024-08-25
 draft = true
 toc = true
 tags = ["go", "golang", "footguns"]
@@ -84,7 +84,9 @@ PASS
 
 ## Why is it like this?
 
-Under the hood slices are backed by simple arrays. Let's say you start with the following array:
+Slices are really just language builtin [dynamic arrays](https://en.wikipedia.org/wiki/Dynamic_array). Under the hood slices are backed by simple arrays. Slices have a length, which is the number of elements in a slice as well as a maximum capacity. If the current maximum capacity of a slice is N elements, and you try to append N+1 elements then the entire backing array must be replaced.
+
+For example, let's say you start with the following maximally populated array:
 
 ```text
 [val1][val2][val3]
