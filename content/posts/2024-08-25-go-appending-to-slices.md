@@ -1,7 +1,6 @@
 +++
 title = 'Common Go Footguns: Appending to slices'
 date = 2024-08-25
-draft = true
 toc = true
 tags = ["go", "golang", "footguns"]
 featured_image="/images/2024-05-29-golang-coverage-mocks/gopher.png"
@@ -84,13 +83,15 @@ PASS
 
 ## Why is it like this?
 
-Slices are really just language builtin [dynamic arrays](https://en.wikipedia.org/wiki/Dynamic_array). Under the hood slices are backed by simple arrays. Slices have a length, which is the number of elements in a slice as well as a maximum capacity. If the current maximum capacity of a slice is N elements, and you try to append N+1 elements then the entire backing array must be replaced.
+Slices are really just [dynamic arrays](https://en.wikipedia.org/wiki/Dynamic_array). Under the hood slices are backed by simple arrays. Slices have a length and a capacity. The length is the number of elements a slice contains. The capacity is the maximum number of elements the slice can contain before needing to be resized. You can check the capacity of a slice with `cap(sliceVarHere)`. If the current maximum capacity of a slice is N elements, and you try to append N+1 elements then the entire backing array must be replaced.
 
 For example, let's say you start with the following maximally populated array:
 
 ```text
 [val1][val2][val3]
 ```
+
+This example array has a capacity of 3, and a length of 3.
 
 Appending to this array requires a larger array. This means we must first allocate a new array, copy all of the values from the first array, then we can add the new item to the first open spot. A typical approach to implementing a dynamic array is to double the maximum size of the array every time we run out of space.
 
@@ -111,5 +112,7 @@ With the appended value:
 ```text
 [val1][val2][val3][val4][][]
 ```
+
+After appending, the final dynamic array has a capacity of 6 and a length of 4.
 
 You can clearly see that not pre-allocating your slice is far more expensive than some would expect.
