@@ -1,2 +1,4 @@
 github.com/theNewDynamic/gohugo-theme-ananke v0.0.0-20231122160523-91df000ca827 h1:70DjvollwE7ZTbgF0E9hsR/cBYrNLwv59UaOb16Tm5c=
 github.com/theNewDynamic/gohugo-theme-ananke v0.0.0-20231122160523-91df000ca827/go.mod h1:yY14BLqqh5G61rO81YcJKMHY1rClY5iIiUK+K2JKSUM=
+github.com/vaga/hugo-theme-m10c v0.0.0-20241019113302-8295ee808a81 h1:92BnYsVq4d2MBkgBYYPt+pMOVT7ZgC/hWrwy3B09K2k=
+github.com/vaga/hugo-theme-m10c v0.0.0-20241019113302-8295ee808a81/go.mod h1:3196jMGTXhINTYZ+dXuDt53xvUQovqOj67kuczeXsjU=

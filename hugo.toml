@@ -1,15 +1,19 @@
 baseURL = 'https://colby.gg'
 languageCode = 'en-us'
 title = 'colby.gg'
-theme = 'github.com/theNewDynamic/gohugo-theme-ananke'
+theme = 'github.com/vaga/hugo-theme-m10c'
 
 [params]
     author = "Jon Colby"
     featured_image = "/images/banner.png"
-[[params.ananke_socials]]
+    Description = "Some guy who does stuff and things"
+    avatar = "images/banner.png"
+[[params.social]]
+    icon = "brand-github"
     name = "github"
     url = "https://github.com/MrUsefull"
-[[params.ananke_socials]]
+[[params.social]]
+    icon = "brand-linked"
     name = "linkedin"
     url = "https://www.linkedin.com/in/jonathan-colby-a9198b99/"
 
