@@ -28,3 +28,13 @@ theme = 'github.com/vaga/hugo-theme-m10c'
 [taxonomies]
   tag = "tags"
   series = "series"
+
+[[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+  identifier = "tags"
+  name = "All Tags"
+  url = "/tags/"
