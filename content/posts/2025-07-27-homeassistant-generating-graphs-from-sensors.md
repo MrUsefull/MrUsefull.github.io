@@ -80,4 +80,4 @@ cards:
 
 ## How to break this dashboard
 
-If a sensors is ever added that does not also expose a humidity sensor, then this display will no longer be even. In theory, there should be a way to exclude or require a 1 - 1 mapping of temperature and humidity but I have not figured that out yet.
+If a sensor is ever added that does not also expose a humidity sensor, then this display will no longer be properly aligned. In theory, there should be a way to exclude or require a 1 - 1 mapping of temperature and humidity but I have not figured that out yet.
