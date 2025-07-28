@@ -1,7 +1,7 @@
 +++
 title = 'Common Go Footguns: Debug Logging'
 date = 2025-07-28
-draft = true
+draft = false
 toc = true
 tags = ["Go","Golang","Footguns"]
 +++
