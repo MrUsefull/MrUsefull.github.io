@@ -34,7 +34,7 @@ func complexString(a int, b int) string {
     out := ""
     for i := range a {
         for j := range b {
-            out := fmt.Sprintf("i=%d,j=%d", i, j)
+            out += fmt.Sprintf("i=%d,j=%d", i, j)
         }
     }
     return out
@@ -53,7 +53,7 @@ How can we avoid this performance problem, and still have oh-so-useful debug log
 
 ```go
 func AddTwoInts(a int, b int) int {
-    logging.IsDebugEnabled() {
+    if logging.IsDebugEnabled() {
         logging.Debug(complexString(a, b), logging.Int("a", a), logging.Int("b", b))
     }
     return a+b

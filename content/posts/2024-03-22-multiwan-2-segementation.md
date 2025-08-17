@@ -1,5 +1,5 @@
 +++
-title = 'Multiwan 2: Segementation and Gateway Groups'
+title = 'Multiwan 2: Segmentation and Gateway Groups'
 date = 2024-03-22
 tags = ["network", "failover", "opnsense", "home network", "HA", "multiwan"]
 toc = true

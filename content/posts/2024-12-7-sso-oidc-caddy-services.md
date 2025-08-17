@@ -14,7 +14,7 @@ Unfortunately, Caddy also does not support OIDC out of the box. I had a surprisi
 
 ## Solution
 
-Configure [outh2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) and forward auth with Caddy. There are other solutions, but this generally seems to work.
+Configure [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) and forward auth with Caddy. There are other solutions, but this generally seems to work.
 
 All configurations below assume the SSO provider is already configured.
 
@@ -58,7 +58,7 @@ services:
           - OAUTH2_PROXY_COOKIE_SECRET=73EgCj7ktL51UWJH5B0c7lZ9cKPeNmgX5qeBUcsWG7s=
           - OAUTH2_PROXY_COOKIE_SECURE=true
           - OAUTH2_PROXY_COOKIE_DOMAINS=server1.my.example.fqdn
-          - OAUTH2_PROXY_WHITELIST_DOMAINS=server1.my.example.fqn
+          - OAUTH2_PROXY_WHITELIST_DOMAINS=server1.my.example.fqdn
           - OAUTH2_PROXY_UPSTREAMS=static://200
           - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
           - OAUTH2_PROXY_SKIP_PROVIDER_BUTTON=true
@@ -80,7 +80,7 @@ services:
 
 `OAUTH2_PROXY_UPSTREAMS=static://200` was a somewhat difficult to dig out setting to respond with http 200 and let Caddy proceed with the reverse proxying after the forward auth. I found that some services worked fine with setting `OAUTH2_PROXY_UPSTREAMS=server1:8080`, but some did not.
 
-`--email-domain="` is specified in the command. It seems the ouath-proxy image for both bitnami and the project build image (not used here) ignore some documented configurations when using environment variables. In theory, `OAUTH2_PROXY_EMAIL_DOMAINS=*` should work but does not.
+`--email-domain="` is specified in the command. It seems the oauth2-proxy image for both bitnami and the project build image (not used here) ignore some documented configurations when using environment variables. In theory, `OAUTH2_PROXY_EMAIL_DOMAINS=*` should work but does not.
 
 `- OAUTH2_PROXY_CODE_CHALLENGE_METHOD=S256` will vary based on the SSO provider.
 

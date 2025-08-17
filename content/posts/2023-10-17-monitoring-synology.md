@@ -176,7 +176,7 @@ Choose the host you want to have polling your NAS for metrics and install the sn
 
 I've written [another post](https://colby.gg/posts/2023-10-18-deploying-snmp-exporter/) on how I deploy snmp_exporter with Ansible.
 
-## Update Prometheus config to scape snmp
+## Update Prometheus config to scrape snmp
 
 My Prometheus is configured via helm, [details here](https://colby.gg/posts/2023-09-30-metrics/). Update the extraScapeConfigs in values.yml with configs for snmp.
 
