@@ -1,22 +1,5 @@
-{{ define "main" }}
-<div class="search-container">
-  <h1>{{ .Title }}</h1>
-  <div id="search"></div>
-</div>
-
+{{ define "head" }}
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-<script src="/pagefind/pagefind-ui.js"></script>
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ 
-            element: "#search", 
-            showSubResults: true,
-            showImages: false,
-            excerptLength: 30
-        });
-    });
-</script>
-
 <style>
 .search-container {
   max-width: 800px;
@@ -57,4 +40,23 @@
   text-decoration: underline;
 }
 </style>
+{{ end }}
+
+{{ define "main" }}
+<div class="search-container">
+  <h1>{{ .Title }}</h1>
+  <div id="search"></div>
+</div>
+
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ 
+            element: "#search", 
+            showSubResults: true,
+            showImages: false,
+            excerptLength: 30
+        });
+    });
+</script>
 {{ end }}
