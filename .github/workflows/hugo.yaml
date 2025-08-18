@@ -61,7 +61,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Generate search index with Pagefind
-        run: npx -y pagefind --site public
+        run: npx -y pagefind@1.3.0 --site public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
