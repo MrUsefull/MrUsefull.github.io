@@ -1,0 +1,21 @@
+{{- if eq .Section "posts" -}}
+<nav class="breadcrumb" aria-label="Breadcrumb navigation">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="{{ .Site.BaseURL }}" class="breadcrumb-link">
+        <span class="breadcrumb-text">Home</span>
+      </a>
+    </li>
+    <li class="breadcrumb-separator" aria-hidden="true">/</li>
+    <li class="breadcrumb-item">
+      <a href="/posts/" class="breadcrumb-link">
+        <span class="breadcrumb-text">Posts</span>
+      </a>
+    </li>
+    <li class="breadcrumb-separator" aria-hidden="true">/</li>
+    <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+      <span class="breadcrumb-text">{{ .Title }}</span>
+    </li>
+  </ol>
+</nav>
+{{- end -}}

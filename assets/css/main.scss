@@ -438,6 +438,69 @@ blockquote {
   margin: 0 0.4em;
 }
 
+// Breadcrumb navigation
+.breadcrumb {
+  margin: 0 0 2rem 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-link {
+  color: $text-muted;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: $accent-primary;
+  }
+  
+  &:focus {
+    outline: 1px solid $accent-primary;
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+}
+
+.breadcrumb-text {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  
+  .breadcrumb-current & {
+    color: $text-primary;
+    font-weight: 500;
+  }
+}
+
+.breadcrumb-separator {
+  color: $text-muted;
+  font-weight: 400;
+  user-select: none;
+}
+
+// Responsive breadcrumb - truncate on small screens
+@media (max-width: 640px) {
+  .breadcrumb-text {
+    max-width: 8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
 // Tags
 .tag {
   display: inline-block;
