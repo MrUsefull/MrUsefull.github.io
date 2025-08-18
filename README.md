@@ -17,6 +17,12 @@ Start the development server with draft content enabled:
 hugo server -D
 ```
 
+**Recommended: Use the run script** which automatically builds the search index and starts the server:
+
+```bash
+./run.sh
+```
+
 The site will be available at http://localhost:1313 with live reload.
 
 ### Create New Post
@@ -48,6 +54,17 @@ Output will be generated in the `public/` directory.
 - `static/images/` - Post images organized in date-based folders
 - `hugo.toml` - Site configuration
 - `layouts/` - Custom layout overrides for the theme
+
+## Search Functionality
+
+The site includes full-text search powered by [Pagefind](https://pagefind.app/). Search functionality:
+
+- **Accessible at** `/search/` via the main navigation
+- **Keyboard shortcut**: Press `/` to focus the search input
+- **Auto-generated index**: Built during site generation
+- **Client-side search**: Fast, no server required
+
+The search index is automatically built when using `./run.sh` or during CI/CD deployment.
 
 ## Theme
 
