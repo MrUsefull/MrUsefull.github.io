@@ -3,6 +3,13 @@ languageCode = 'en-us'
 title = 'colby.gg'
 theme = 'github.com/vaga/hugo-theme-m10c'
 
+[markup]
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = true
+    style = "github-dark"
+    tabWidth = 2
+
 [params]
     author = "Jon Colby"
     featured_image = "/images/banner.png"
