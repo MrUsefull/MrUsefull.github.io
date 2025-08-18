@@ -249,6 +249,17 @@ blockquote {
   border: 0.5rem solid $accent-primary;
 }
 
+// Remove focus outline from avatar link
+.app-header a:focus {
+  outline: none;
+}
+
+// Add subtle hover effect for avatar
+.app-header a:hover .app-header-avatar {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
 .app-container {
   padding: 2.5rem;
   max-width: 75rem;
