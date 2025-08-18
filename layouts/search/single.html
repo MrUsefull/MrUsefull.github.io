@@ -1,0 +1,62 @@
+{{ define "head" }}
+<meta name="robots" content="noindex, nofollow">
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<link href="/css/search.css" rel="stylesheet">
+{{ end }}
+
+{{ define "main" }}
+<div class="search-container">
+  <h1 id="search-heading">{{ .Title }}</h1>
+  <p class="search-description">Search through all blog posts and content on this site.</p>
+  <div id="search" 
+       role="search" 
+       aria-labelledby="search-heading"
+       aria-describedby="search-description"></div>
+  <p class="search-hint">Press <kbd>/</kbd> to focus the search box</p>
+</div>
+
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        try {
+            if (typeof PagefindUI === 'undefined') {
+                throw new Error('PagefindUI not loaded');
+            }
+            
+            new PagefindUI({ 
+                element: "#search", 
+                showSubResults: true,
+                showImages: false,
+                excerptLength: 30
+            });
+            
+            // Add keyboard shortcut (/) to focus search
+            document.addEventListener('keydown', function(event) {
+                if (event.key === '/' && !event.ctrlKey && !event.metaKey && !event.altKey) {
+                    // Only if not in an input field
+                    if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
+                        event.preventDefault();
+                        const searchInput = document.querySelector('.pagefind-ui__search-input');
+                        if (searchInput) {
+                            searchInput.focus();
+                        }
+                    }
+                }
+            });
+            
+        } catch (error) {
+            console.error('Search initialization failed:', error.message);
+            
+            const searchElement = document.getElementById('search');
+            if (searchElement) {
+                searchElement.innerHTML = `
+                    <div class="search-error" role="alert" aria-live="polite">
+                        <p><strong>Search is temporarily unavailable.</strong></p>
+                        <p>Please try refreshing the page or browse using the <a href="/tags/">tags page</a>.</p>
+                    </div>
+                `;
+            }
+        }
+    });
+</script>
+{{ end }}
