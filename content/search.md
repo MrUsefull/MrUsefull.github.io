@@ -1,7 +1,10 @@
 +++
 title = "Search"
-date = "2025-08-18"
 draft = false
+robots = "noindex, nofollow"
+sitemap_exclude = true
 +++
 
+<!-- markdownlint-disable MD033 -->
 <div id="search"></div>
+<!-- markdownlint-enable MD033 -->
