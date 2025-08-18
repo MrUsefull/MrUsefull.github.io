@@ -39,6 +39,29 @@
 .pagefind-ui__result-title a:hover {
   text-decoration: underline;
 }
+
+.search-error {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  color: #495057;
+  margin-top: 2rem;
+}
+
+.search-error p {
+  margin: 0.5rem 0;
+}
+
+.search-error a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.search-error a:hover {
+  text-decoration: underline;
+}
 </style>
 {{ end }}
 
@@ -51,12 +74,31 @@
 <script src="/pagefind/pagefind-ui.js"></script>
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ 
-            element: "#search", 
-            showSubResults: true,
-            showImages: false,
-            excerptLength: 30
-        });
+        try {
+            if (typeof PagefindUI === 'undefined') {
+                throw new Error('PagefindUI not loaded');
+            }
+            
+            new PagefindUI({ 
+                element: "#search", 
+                showSubResults: true,
+                showImages: false,
+                excerptLength: 30
+            });
+            
+        } catch (error) {
+            console.error('Search initialization failed:', error.message);
+            
+            const searchElement = document.getElementById('search');
+            if (searchElement) {
+                searchElement.innerHTML = `
+                    <div class="search-error">
+                        <p><strong>Search is temporarily unavailable.</strong></p>
+                        <p>Please try refreshing the page or browse using the <a href="/tags/">tags page</a>.</p>
+                    </div>
+                `;
+            }
+        }
     });
 </script>
 {{ end }}
