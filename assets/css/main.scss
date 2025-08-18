@@ -191,6 +191,83 @@ pre {
   user-select: none;
 }
 
+// Header bar language indicators
+.code-container {
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  // Force everything to stick together, but allow breathing room in code area
+  * {
+    margin-top: 0 !important;
+  }
+  
+  // Add some breathing room between header and code text
+  .highlight .chroma > div {
+    padding-top: 0.5rem !important;
+  }
+  
+  .code-header {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: white;
+    background: $accent-primary;
+    
+    .code-header-text {
+      display: inline-block;
+    }
+    
+    // Language-specific colors
+    &[data-lang="go"] { background: linear-gradient(135deg, #00add8, #0084b8); }
+    &[data-lang="javascript"] { background: linear-gradient(135deg, #f7df1e, #e6c613); }
+    &[data-lang="js"] { background: linear-gradient(135deg, #f7df1e, #e6c613); }
+    &[data-lang="typescript"] { background: linear-gradient(135deg, #3178c6, #2358a6); }
+    &[data-lang="ts"] { background: linear-gradient(135deg, #3178c6, #2358a6); }
+    &[data-lang="python"] { background: linear-gradient(135deg, #3776ab, #2d5c8a); }
+    &[data-lang="py"] { background: linear-gradient(135deg, #3776ab, #2d5c8a); }
+    &[data-lang="bash"] { background: linear-gradient(135deg, #4eaa25, #3d8a1d); }
+    &[data-lang="shell"] { background: linear-gradient(135deg, #4eaa25, #3d8a1d); }
+    &[data-lang="sh"] { background: linear-gradient(135deg, #4eaa25, #3d8a1d); }
+    &[data-lang="yaml"] { background: linear-gradient(135deg, #cb171e, #a61319); }
+    &[data-lang="yml"] { background: linear-gradient(135deg, #cb171e, #a61319); }
+    &[data-lang="json"] { background: linear-gradient(135deg, #292929, #1f1f1f); }
+    &[data-lang="docker"] { background: linear-gradient(135deg, #2496ed, #1a7bc4); }
+    &[data-lang="dockerfile"] { background: linear-gradient(135deg, #2496ed, #1a7bc4); }
+    &[data-lang="toml"] { background: linear-gradient(135deg, #9c4221, #7d351a); }
+    &[data-lang="html"] { background: linear-gradient(135deg, #e34c26, #c43e20); }
+    &[data-lang="css"] { background: linear-gradient(135deg, #1572b6, #115a92); }
+    &[data-lang="scss"] { background: linear-gradient(135deg, #cf649a, #b5507f); }
+    &[data-lang="rust"] { background: linear-gradient(135deg, #ce422b, #a83523); }
+    &[data-lang="ruby"] { background: linear-gradient(135deg, #cc342d, #a62a24); }
+    &[data-lang="php"] { background: linear-gradient(135deg, #777bb4, #6a6a9a); }
+    &[data-lang="java"] { background: linear-gradient(135deg, #ed8b00, #c47400); }
+    &[data-lang="c"] { background: linear-gradient(135deg, #a8b9cc, #8fa3b3); }
+    &[data-lang="cpp"] { background: linear-gradient(135deg, #00599c, #004578); }
+    &[data-lang="csharp"] { background: linear-gradient(135deg, #239120, #1c7219); }
+  }
+  
+  .highlight {
+    margin: 0;
+    border-radius: 0;
+    
+    .chroma {
+      border-radius: 0;
+      border: none;
+      margin: 0;
+      
+      // Remove any top margin/padding from the inner div
+      > div {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}
+
 // Paragraph improvements
 p {
   margin: 1rem 0;

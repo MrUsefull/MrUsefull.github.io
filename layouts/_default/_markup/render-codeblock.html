@@ -1,0 +1,12 @@
+{{- $lang := .Type | default "text" -}}
+{{- $highlighted := highlight .Inner $lang "" -}}
+{{- if ne $lang "text" -}}
+<div class="code-container">
+  <div class="code-header" data-lang="{{ $lang }}">
+    <span class="code-header-text">{{ upper $lang }}</span>
+  </div>
+  {{ $highlighted | safeHTML }}
+</div>
+{{- else -}}
+  {{ $highlighted | safeHTML }}
+{{- end -}}
