@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="search-container">
+  <h1>{{ .Title }}</h1>
+  <div id="search"></div>
+</div>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ 
+            element: "#search", 
+            showSubResults: true,
+            showImages: false,
+            excerptLength: 30
+        });
+    });
+</script>
+
+<style>
+.search-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Custom styling for Pagefind */
+.pagefind-ui__search-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: white;
+}
+
+.pagefind-ui__search-input:focus {
+  outline: none;
+  border-color: #007acc;
+}
+
+.pagefind-ui__result {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+}
+
+.pagefind-ui__result-title a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.pagefind-ui__result-title a:hover {
+  text-decoration: underline;
+}
+</style>
+{{ end }}

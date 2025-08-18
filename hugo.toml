@@ -38,3 +38,9 @@ theme = 'github.com/vaga/hugo-theme-m10c'
   identifier = "tags"
   name = "All Tags"
   url = "/tags/"
+  weight = 2
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 3
