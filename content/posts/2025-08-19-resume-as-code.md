@@ -1,7 +1,7 @@
 +++
 title = 'Resume as code'
 date = 2025-08-19
-draft = true
+draft = false
 toc = true
 tags = ["ci", "resume", "projects"]
 summary = "Treating my resume with the same respect I give my code."
