@@ -4,6 +4,7 @@ date = 2025-07-28
 draft = false
 toc = true
 tags = ["Go","Golang","Footguns"]
+summary = "This is the third post in a series on common go footguns about how debug logging can have surprising performance impacts"
 +++
 
 Technically, the problem discussed in this post is not really about debug logging. Debug logging is just the main place where I see this misunderstanding manifest. It is also not specific to Go, I've run across this issue while working in many languages at multiple companies. I've also been paged too many times for this exact problem bringing down a production environment.

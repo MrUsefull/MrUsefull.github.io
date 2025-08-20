@@ -515,6 +515,13 @@ blockquote {
   margin: 0 0.4em;
 }
 
+.posts-list-item-summary {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: $text-secondary;
+}
+
 // Breadcrumb navigation
 .breadcrumb {
   margin: 0 0 2rem 0;
