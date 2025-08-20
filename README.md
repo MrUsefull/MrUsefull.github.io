@@ -1,6 +1,6 @@
 # colby.gg
 
-Personal blog built with Hugo static site generator, hosted on GitHub Pages at https://colby.gg.
+Personal blog built with Hugo static site generator, hosted on GitHub Pages at [colby.gg](https://colby.gg).
 
 ## Prerequisites
 
@@ -23,17 +23,24 @@ hugo server -D
 ./run.sh
 ```
 
-The site will be available at http://localhost:1313 with live reload.
+The site will be available at [http://localhost:1313](http://localhost:1313) with live reload.
 
 ### Create New Post
 
 Generate a new blog post with date prefix:
 
 ```bash
+./newpost.sh title-of-my-post
+```
+
+#### Old way
+
+```bash
 hugo new content posts/$(date +"%Y-%m-%d")-${TITLE}.md
 ```
 
 Example:
+
 ```bash
 TITLE="my-new-post" hugo new content posts/$(date +"%Y-%m-%d")-${TITLE}.md
 ```
