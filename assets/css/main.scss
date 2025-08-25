@@ -678,3 +678,8 @@ blockquote {
     scrollbar-color: rgba(87, 204, 138, 0.4) transparent;
   }
 }
+
+// Left-justify the TOC
+.app-header aside > div {
+  text-align: left !important;
+}
