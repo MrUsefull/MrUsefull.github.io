@@ -314,7 +314,7 @@ This change does several things.
 
 1. Rename the function to Returning. At this point I'm planning to move this to a single purpose package called `funcfind`.
   `funcfind.Returning` is nicer to use.
-2. Utilizes iterators to yield a Seq of *types.Func. Naturally, the calling code must also change a little
+2. Utilizes iterators to yield a Seq of *types.Func`. Naturally, the calling code must also change a little
 
     ```go
     func findStructuredLogFns(pkgPath string, returnType string) *set.Set[funcs.Description] {
