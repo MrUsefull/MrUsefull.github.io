@@ -124,7 +124,7 @@ So let's try and make our code a little more general and modular.
 
 Seriously, you already had tests, right?
 
-The first step should be to write tests for the outermost function whose behavior we do not want to change. Starting with well tested code allows
+The first step should be to write tests for the outermost function whose behavior we do not want to change. Starting with well-tested code allows
 us to make drastic changes with confidence.
 In this case, that function is `AllowedZapFnCalls`. This function happened to already be tested, and exported
 functions should generally come with dedicated unit tests anyway.
