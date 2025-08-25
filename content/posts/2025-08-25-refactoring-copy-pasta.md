@@ -124,11 +124,12 @@ So let's try and make our code a little more general and modular.
 
 Seriously, you already had tests, right?
 
-The first step should be to write tests for the outermost function whose behavior we do not want to change.
+The first step should be to write tests for the outermost function whose behavior we do not want to change. Starting with well tested code allows
+us to make drastic changes with confidence.
 In this case, that function is `AllowedZapFnCalls`. This function happened to already be tested, and exported
 functions should generally come with dedicated unit tests anyway.
 
-Included here is a minimal test for correctness.
+Included here is a minimal test for correctness. This is by no means a complete set of tests, after all this post is not about testing your code.
 
 ```go
 func TestAllowedZapFnCalls(t *testing.T) {
@@ -175,6 +176,9 @@ func TestAllowedZapFnCalls(t *testing.T) {
 ```
 
 ### Make the code re-usable within the same package
+
+First we're going to extract needed parameters, allowing the next
+logging library we support to be implemented with a single function call.
 
 Create a new file `func_find.go`
 
@@ -267,7 +271,7 @@ burden. There's no need for the code that does the searching to depend on `set.S
 
 We're going to have to flip the dependency relationship.
 
-## Iterator approach
+## Iterator approach - flipping the dependencies
 
 The [iter](https://pkg.go.dev/iter) package introduced in go1.23 lets us remove the data type dependencies from our functionality.
 
@@ -356,7 +360,7 @@ This change does several things.
 The iterator approach does have some tradeoffs. As previously mentioned, the caller must write
 a little more code. Developers calling the package must also understand how iterators work.
 
-The upsides however, are significant. By using iterators we remove dependencies on external
+The upsides, however, are significant. By using iterators we remove dependencies on external
 data types and focus on the one thing this section of code is supposed to do. It's potentially
 more memory efficient, the caller can inspect a single item at a time instead of needing to
 load the full data set into memory for processing and manipulation. It's more flexible in that
