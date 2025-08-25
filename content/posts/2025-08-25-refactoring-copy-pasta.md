@@ -246,6 +246,11 @@ to support other log libraries. By providing both the package path and return ty
 support packages such as [slog](https://pkg.go.dev/log/slog). In fact, here's a working slog implementation:
 
 ```go
+const (
+  slogPackagePath = "log/slog"
+  slogFieldType   = "log/slog.Attr"
+)
+
 // AllowedSlogCalls is the default set of allowed slog
 // structured field calls.
 func AllowedSlogCalls() *set.Set[funcs.Description] {
@@ -314,7 +319,7 @@ This change does several things.
 
 1. Rename the function to Returning. At this point I'm planning to move this to a single purpose package called `funcfind`.
   `funcfind.Returning` is nicer to use.
-2. Utilizes iterators to yield a Seq of *types.Func`. Naturally, the calling code must also change a little
+2. Utilizes iterators to yield a Seq of `*types.Func`. Naturally, the calling code must also change a little
 
     ```go
     func findStructuredLogFns(pkgPath string, returnType string) *set.Set[funcs.Description] {
