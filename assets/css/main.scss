@@ -370,7 +370,9 @@ blockquote {
     top: 0;
     left: 0;
     width: 20rem;
-    min-height: 100vh;
+    height: 100vh; // Use height instead of min-height
+    overflow-y: auto; // Allow the entire header to scroll
+    overflow-x: hidden;
   }
   
   .app-container {
@@ -638,5 +640,41 @@ blockquote {
     &:nth-last-child(-n+2) {
       border-bottom: none;
     }
+  }
+}
+
+// Fix for TOC overflow in sidebar - improved scrollbar
+@media (min-width: 940px) {
+  // Custom scrollbar styling for the entire header
+  .app-header {
+    // Smooth scrolling behavior
+    scroll-behavior: smooth;
+    
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent; // Invisible track for cleaner look
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(87, 204, 138, 0.4); // Use your accent color
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.1); // Subtle border
+      
+      &:hover {
+        background: rgba(87, 204, 138, 0.6);
+        border: 1px solid rgba(87, 204, 138, 0.3);
+      }
+      
+      &:active {
+        background: rgba(87, 204, 138, 0.8);
+      }
+    }
+    
+    // Firefox scrollbar styling
+    scrollbar-width: thin;
+    scrollbar-color: rgba(87, 204, 138, 0.4) transparent;
   }
 }
