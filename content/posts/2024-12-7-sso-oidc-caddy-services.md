@@ -20,6 +20,8 @@ All configurations below assume the SSO provider is already configured.
 
 ## Docker Compose
 
+***Note: The original version used bitnami's oauth2-proxy [never](https://community.broadcom.com/tanzu/blogs/beltran-rueda-borrego/2025/08/18/how-to-prepare-for-the-bitnami-changes-coming-soon) use anything bitnami***
+
 ```yml
 services:
     caddy:
@@ -45,7 +47,7 @@ services:
 
     oauth2-proxy:
         container_name: oauth2-proxy
-        image: bitnami/oauth2-proxy:latest
+        image: quay.io/oauth2-proxy/oauth2-proxy:v7.12.0
         restart: unless-stopped
         command: "oauth2-proxy --email-domain=*"
         # WARNING: Many env variables seem to be completely ignored
