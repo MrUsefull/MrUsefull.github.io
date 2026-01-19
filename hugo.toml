@@ -13,7 +13,7 @@ theme = 'github.com/vaga/hugo-theme-m10c'
 [params]
     author = "Jon Colby"
     featured_image = "/images/banner.png"
-    Description = "Some guy who does stuff and things"
+    Description = "Some guy who does stuff and things. Sometimes even writing it down."
     avatar = "images/banner.png"
 [[params.social]]
     icon = "brand-github"
