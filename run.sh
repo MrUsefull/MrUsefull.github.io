@@ -2,5 +2,6 @@
 
 set -xeu
 
-npx -y pagefind --site public
+npm install
+npx pagefind --site public
 hugo serve -D

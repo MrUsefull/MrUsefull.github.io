@@ -9,6 +9,7 @@ summary = "Generating a dashboard full of graphs from all sensors with given att
 Over time I've developed a reasonably useful to me home assistant dashboard of all temperature and humidity sensors around my house. This was built manually over time, and whenever I add or remove a sensor I would have to update the dashboard myself. Obviously, I never remember to do so until I want to see that data.
 
 ## Requirements
+
 - Use the same sensor card graph I've had setup
 - Fully automatically generated. If I bring a new temperature+humidity sensor online, it should automatically be added to the dashboard. No further interaction required.
 - Display each sensor's Temperature and Humidity graphs next to each other
@@ -17,6 +18,7 @@ Over time I've developed a reasonably useful to me home assistant dashboard of a
 It was surprisingly difficult to put together the pieces here to meet all requirements. I would have tolerated generating this dashboard sever side at startup, and in fact did consider writing some templating code to just generate the dashboard from all entities. In the end, I found [lovelace-auto-entities](https://github.com/thomasloven/lovelace-auto-entities) and leveraged that project.
 
 ## Broad strokes
+
 Utilize auto-entities to select all sensors that have a `temperature` device class. Place each found entity in a sensor card with a line graph. Repeat for humidity.
 
 For nice organization, place both auto-entities in a horizontal stack, and sort both the same way. Now each sensor has temperature and humidity lined up next to each other.

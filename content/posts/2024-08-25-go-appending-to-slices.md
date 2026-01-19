@@ -2,7 +2,7 @@
 title = 'Common Go Footguns: Appending to slices'
 date = 2024-08-25
 toc = true
-tags = ["go", "golang", "footguns"]
+tags = ["go", "golang", "footguns", "performance"]
 featured_image="/images/2024-05-29-golang-coverage-mocks/gopher.png"
 summary = "This is the second post in a series on common Go footguns. This post demonstrates the performance impacts of appending a known number of elements to a slice without doing any pre-allocation. This is one of the most common and easily fixed performance issues I see in pull requests on a regular basis."
 +++
@@ -116,3 +116,5 @@ With the appended value:
 After appending, the final dynamic array has a capacity of 6 and a length of 4.
 
 You can clearly see that not pre-allocating your slice is far more expensive than some would expect.
+
+Pre-allocation is worth it even when knowing the size of the slice is an expensive operation: [Common Go Footguns: Appending to slices #2](/posts/2026-01-18-go-append-slice-big-o/)
